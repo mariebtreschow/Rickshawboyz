@@ -11,9 +11,9 @@ module.exports = function (app) {
     app.get('/about');
 
    //not in use right now, need to render from datbase
-    app.get('/challenges', listChallenges.getTweetsBasedOnHashtag);
+    app.get('/challenges/test', listChallenges.getTweetsBasedOnHashtag);
 
-     app.get('/challenges/test', listChallenges.getTweetsSavedInDB);
+     app.get('/challenges', listChallenges.getTweetsSavedInDB);
 
     app.post('/challenges');
 };
