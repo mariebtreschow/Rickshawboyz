@@ -21,7 +21,7 @@ let self = module.exports = {
    params: params,
 
    getTweetsBasedOnHashtag : function(req, res){
-      //saved these to database
+      //not in use right now
 
       client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
 
