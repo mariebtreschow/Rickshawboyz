@@ -1,6 +1,9 @@
 "use strict";
 
-const Twitter  = require('twitter');
+const Twitter     = require('twitter');
+const Tweet = require('../models/tweets.js');
+const mongoose    = require('mongoose');
+
 
 const client = new Twitter({
    consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -18,6 +21,7 @@ let self = module.exports = {
    params: params,
 
    getTweetsBasedOnHashtag : function(req, res){
+      //saved these to database
 
       client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
 
@@ -43,6 +47,25 @@ let self = module.exports = {
                message  : 'Internal error'
             });
          }
+      });
+   },
+
+   getTweetsSavedInDB : function(res, callback ){
+      //display tweets from database
+      Tweet.find({},'twid active author avatar body date screenname',{skip: start, limit: 10})
+         .sort({date: 'desc'})
+         .exec(function(error, tweetsFromDatabase){
+
+            if(!error){
+
+               tweets = tweetsFromDatabase;
+
+            } else {
+               res.status(404).send({
+                  status : 'No Tweets in database yet',
+                  tweets : null
+               });
+            }
       });
    }
 };
