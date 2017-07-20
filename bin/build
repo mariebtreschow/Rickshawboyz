@@ -1,0 +1,10 @@
+#!/bin/bash
+
+currentDir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+rootDir=$currentDir/../..
+
+eval $($currentDir/setenv)
+
+cd $rootDir/src
+
+gulp
