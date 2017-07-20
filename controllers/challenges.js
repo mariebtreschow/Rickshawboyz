@@ -15,7 +15,7 @@ let self = module.exports = {
    params: params,
 
    getTweetsBasedOnHashtag : function(req, res){
-      //NOT IS USE RIGHT NOW
+   //NOT IS USE RIGHT NOW
 
       client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
 

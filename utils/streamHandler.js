@@ -2,10 +2,8 @@ const Tweet = require('../models/tweets');
 
 module.exports = function(stream, io){
 
-  // when tweets get sent our way ...
    stream.on('data', function(data) {
-      console.log('\n streamHandler', data)
-    // construct a new tweet object
+
       let tweet = {
          twid: data['id'],
          active: false,
@@ -17,7 +15,7 @@ module.exports = function(stream, io){
       };
 
     let tweetEntry = new Tweet(tweet);
-    console.log(tweetEntry)
+   //  console.log(tweetEntry)
 
     tweetEntry.save(function(err) {
        if (!err) {
