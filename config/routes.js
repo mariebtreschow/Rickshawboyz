@@ -12,5 +12,7 @@ module.exports = function (app) {
 
     app.get('/challenges', listChallenges.getTweetsBasedOnHashtag);
 
+     app.get('/challenges/test', listChallenges.getTweetsSavedInDB);
+
     app.post('/challenges');
 };

@@ -2,7 +2,11 @@ const bodyParser     = require('body-parser'),
       express        = require('express'),
       mongoose       = require('mongoose'),
       http           = require('http'),
-      morgan         = require('morgan');
+      morgan         = require('morgan'),
+      twitter        = require('ntwitter'),
+      config         = require('./config'),
+      streamHandler  = require('./utils/streamHandler.js');
+
 
 let app              = express();
 let port             = process.env.EXPRESS_PORT || 8050;
@@ -38,9 +42,17 @@ const server = http.createServer(app).listen(port, function() {
 // Initialize socket.io
 const io = require('socket.io').listen(server);
 
+
+const twit = new twitter(config.twitter);
+// Set a stream listener for tweets matching tracking keywords
+twit.stream('statuses/filter',{ track: '#rickshawboyz, #savetherainforest'}, function(stream){
+   console.log('Starting to streaming twitter !!');
+   streamHandler(stream, io);
+});
+
 //catch 404 and forward to error handler
 app.use(function (req, res, next) {
-   res.status(404).send('Document not found');
+   res.status(404).send('Tweet not found');
 });
 
 exports = module.exports = app;

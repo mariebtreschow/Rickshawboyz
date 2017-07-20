@@ -50,20 +50,31 @@ let self = module.exports = {
       });
    },
 
-   getTweetsSavedInDB : function(res, callback ){
+   getTweetsSavedInDB : function(req, res, callback ){
       //display tweets from database
-      Tweet.find({},'twid active author avatar body date screenname',{skip: start, limit: 10})
+
+      Tweet.find({},{ limit: 10})
          .sort({date: 'desc'})
          .exec(function(error, tweetsFromDatabase){
 
-            if(!error){
+            if(!error && tweetsFromDatabase !== undefined && tweetsFromDatabase.lenght < 1){
 
-               tweets = tweetsFromDatabase;
+               res.status(200).send({
+                  status : 'success',
+                  tweets : tweetsFromDatabase
+               });
 
-            } else {
+            } else if(!error) {
+
                res.status(404).send({
-                  status : 'No Tweets in database yet',
+                  status : 'No Tweets found in database',
                   tweets : null
+               });
+               
+            } else {
+               res.status(500).send({
+                  status   : 'error',
+                  message  : 'Internal error'
                });
             }
       });
