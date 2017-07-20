@@ -1,7 +1,7 @@
 "use strict";
 
 const Twitter     = require('twitter');
-const Tweet = require('../models/tweets.js');
+const Tweet       = require('../models/tweets.js');
 const mongoose    = require('mongoose');
 
 
@@ -26,7 +26,6 @@ let self = module.exports = {
       client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
 
          if (!error) {
-
             if (tweetsWithHashtag !== undefined) {
 
                res.status(200).send({
@@ -50,31 +49,20 @@ let self = module.exports = {
       });
    },
 
-   getTweetsSavedInDB : function(req, res, callback ){
-      //display tweets from database
+   getTweetsSavedInDB : function(req, res, callback){
 
-      Tweet.find({},{ limit: 10})
-         .sort({date: 'desc'})
-         .exec(function(error, tweetsFromDatabase){
+      Tweet.find().exec(function(error, tweetsFromDatabase){
 
-            if(!error && tweetsFromDatabase !== undefined && tweetsFromDatabase.lenght < 1){
+            if(!error && tweetsFromDatabase !== undefined){
 
                res.status(200).send({
                   status : 'success',
                   tweets : tweetsFromDatabase
                });
-
-            } else if(!error) {
-
+            } else {
                res.status(404).send({
                   status : 'No Tweets found in database',
                   tweets : null
-               });
-               
-            } else {
-               res.status(500).send({
-                  status   : 'error',
-                  message  : 'Internal error'
                });
             }
       });
