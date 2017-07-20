@@ -3,7 +3,7 @@ const bodyParser     = require('body-parser'),
       mongoose       = require('mongoose'),
       http           = require('http'),
       morgan         = require('morgan'),
-      twitter        = require('ntwitter'),
+      twitter        = require('twitter'),
       config         = require('./config'),
       streamHandler  = require('./utils/streamHandler.js');
 
