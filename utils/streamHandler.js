@@ -2,10 +2,10 @@ const Tweet = require('../models/tweets');
 
 module.exports = function(stream, io){
 
-  // When tweets get sent our way ...
+  // when tweets get sent our way ...
    stream.on('data', function(data) {
       console.log('\n streamHandler', data)
-    // Construct a new tweet object
+    // construct a new tweet object
       let tweet = {
          twid: data['id'],
          active: false,
@@ -16,12 +16,11 @@ module.exports = function(stream, io){
          screenname: data['user']['screen_name']
       };
 
-    // Create a new model instance with our object
     let tweetEntry = new Tweet(tweet);
     console.log(tweetEntry)
+
     tweetEntry.save(function(err) {
        if (!err) {
-        // If everything is cool, socket.io emits the tweet.
         io.emit('tweet', tweet);
        }
     });

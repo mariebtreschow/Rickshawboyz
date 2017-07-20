@@ -3,15 +3,9 @@
 const Twitter     = require('twitter');
 const Tweet       = require('../models/tweets.js');
 const mongoose    = require('mongoose');
+const config      = require('../config');
 
-
-const client = new Twitter({
-   consumer_key: process.env.TWITTER_CONSUMER_KEY,
-   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
-
+const client = new Twitter(config.twitter);
 
 const params = { q : '#MOBGEN', count: 10 };
 
@@ -21,7 +15,7 @@ let self = module.exports = {
    params: params,
 
    getTweetsBasedOnHashtag : function(req, res){
-      //not in use right now
+      //NOT IS USE RIGHT NOW
 
       client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
 
