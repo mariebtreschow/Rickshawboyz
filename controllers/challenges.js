@@ -14,34 +14,6 @@ let self = module.exports = {
    client: client,
    params: params,
 
-   getTweetsBasedOnHashtag : function(req, res){
-   //NOT IS USE RIGHT NOW
-
-      client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
-
-         if (!error) {
-            if (tweetsWithHashtag !== undefined) {
-
-               res.status(200).send({
-                  status : 'success',
-                  tweets : tweetsWithHashtag
-               });
-
-            } else {
-               res.status(404).send({
-                  status : 'No Tweets with that hashtag were found',
-                  tweets : null
-               });
-            }
-
-         } else {
-            res.status(500).send({
-               status   : 'error',
-               message  : 'Internal error'
-            });
-         }
-      });
-   },
 
    getTweetsSavedInDB : function(req, res, callback){
 
@@ -59,6 +31,33 @@ let self = module.exports = {
                   tweets : null
                });
             }
+      });
+   },
+
+   getTweetsBasedOnHashtag : function(req, res){
+   //NOT IS USE RIGHT NOW
+
+      client.get('search/tweets', params, function(error, tweetsWithHashtag, response) {
+
+         if (!error) {
+            if (tweetsWithHashtag !== undefined) {
+
+               res.status(200).send({
+                  status : 'success',
+                  tweets : tweetsWithHashtag
+               });
+            } else {
+               res.status(404).send({
+                  status : 'No Tweets with that hashtag were found',
+                  tweets : null
+               });
+            }
+         } else {
+            res.status(500).send({
+               status   : 'error',
+               message  : 'Internal error'
+            });
+         }
       });
    }
 };
