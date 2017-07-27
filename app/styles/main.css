@@ -1,0 +1,142 @@
+/* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+#map {
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+@font-face {
+    font-family: Metropolis-Bold;
+    src: url(./../fonts/metropolis/Metropolis-Bold.otf);
+}
+
+@font-face {
+    font-family: Metropolis-Medium;
+    src: url(./../fonts/metropolis/Metropolis-Medium.otf);
+}
+
+@font-face {
+    font-family: Metropolis-Regular;
+    src: url(./../fonts/metropolis/Metropolis-Regular.otf);
+}
+
+@font-face {
+    font-family: Metropolis-SemiBold;
+    src: url(./../fonts/metropolis/Metropolis-SemiBold.otf);
+}
+
+@font-face {
+    font-family: Metropolis-Light;
+    src: url(./../fonts/metropolis/Metropolis-Light.otf);
+}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    display:none !important;
+}
+.gm-fullscreen-control {
+    display:none;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+#challenges {
+    background-color: #C64A30;
+}
+
+#upNext {
+    font-family: Metropolis-Bold;
+    font-size: 20px;
+}
+
+#challengesContainer {
+    margin-top: 45%;
+}
+#namesUser {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#people {
+    margin-top: 10%;
+}
+
+#name {
+    color: rgba(245, 166, 35, 1);
+    font-family: Metropolis-Bold;
+    font-size: 15px;
+}
+
+#user {
+    color: rgba(206, 206, 206, 1);
+    font-family: Metropolis-Regular;
+    font-size: 15px;
+}
+#challenge {
+    color: white;
+    font-family: Metropolis-Medium;
+    font-size: 23px;
+}
+
+
+a:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+
+#tweetChallenge {
+    background-color: #C64A30;
+    color: white;
+    font-family: Metropolis-Medium;
+    font-size: 17px;
+    border: 0px solid;
+    border-radius: 25px;
+    height: 60px;
+    width: 70%;
+    box-shadow: 0px 2px 0px 0px rgba(53, 53, 53, 1);
+    margin-top: 80%;
+    margin-left: 10%;
+    margin-bottom: 15%;
+}
+
+#yourName {
+    color: rgba(71, 71, 71, 1);
+    font-family: Metropolis-SemiBold;
+    font-size: 17px;
+    margin-right: 3%;
+}
+
+#yourUser {
+    color: rgba(150, 150, 150, 1);
+    font-family: Metropolis-Light;
+    font-size: 17px;
+    font-weight: 100;
+}
+#yourChallenge {
+    color: rgba(131, 131, 131, 1);
+    font-family: Metropolis-Medium;
+    font-size: 17px;
+}
+#yourNYU {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 3%;
+}
+
+#colorfull {
+    font-family: Metropolis-Medium;
+    color: rgba(213, 62, 33, 1);
+}
