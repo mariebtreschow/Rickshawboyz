@@ -25,36 +25,18 @@
 <!--[if IE]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div id="challenger" style="z-index: 0; height: 77.3%; margin-left: 10%">
+<div id="challenger" style="z-index: 0;overflow: scroll; height: 100%; margin-left: 10%">
     <div id="challengesContainer">
         <div id="upNext">
             Challenges Up Next:
         </div>
     </div>
-    <div id="people">
-        <div id="namesUser">
-            <div id="name">
-                Charles Fried
-            </div>
-            <div id="user">
-                @pencil_stroke:
-            </div>
-        </div>
-        <div id="challenge">
-            #findamonkey €70 #selfiesforgood
-        </div>
-    </div>
-
 </div>
 
-<img style="position: absolute; top: 8%; left: 30%; width: 150px;" src="./images/rickshaw-boyz-sm.svg" alt="Rickshaw Boyz Logo">
+<img id="logoRickFade" src="./images/rickshaw-boyz-sm.svg" alt="Rickshaw Boyz Logo">
 <div id="buttonContainer">
-    <a href="/" id="home" style="background-color: black; margin-top: -20%;
-    position: relative;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;">
-        <svg style="display: block; margin: auto; margin-top: 18%;" width="25px" height="25px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <a href="map.html" id="iconLink">
+        <svg width="25px" height="25px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
             <desc>Created with Sketch.</desc>
             <defs></defs>
@@ -65,12 +47,8 @@
             </g>
         </svg>
     </a>
-    <a href="#" id="col" style="background-color: black; margin-top: -20%;
-    position: relative;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;">
-        <svg style="display: block; margin: auto; margin-top: 18%;" width="25px" height="25px" viewBox="0 0 22 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <a href="challenges.html" id="iconLink">
+        <svg width="25px" height="25px" viewBox="0 0 22 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
             <desc>Created with Sketch.</desc>
             <defs>
@@ -92,12 +70,8 @@
             </g>
         </svg>
     </a>
-    <a href="about.html" id="v" style="background-color: black; margin-top: -20%;
-    position: relative;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;">
-        <svg style="display: block; margin: auto; margin-top: 26%;" width="20px" height="20px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <a href="about.html" id="iconLink">
+        <svg style="margin-left: 27%; margin-top: 27%;"width="20px" height="20px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
             <desc>Created with Sketch.</desc>
             <defs></defs>
@@ -108,12 +82,11 @@
             </g>
         </svg>
     </a>
-
 </div>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ7oyccBwagMEjSShM6TQmkuLLcVcjZYo&callback=initMap"
-        async defer></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ7oyccBwagMEjSShM6TQmkuLLcVcjZYo&callback=initMap"-->
+        <!--async defer></script>-->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
@@ -129,6 +102,7 @@
 <!-- bower:js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -148,7 +122,7 @@
 <!-- endbuild -->
 
 <!-- build:js scripts/main.js -->
-<script src="scripts/main.js"></script>
+<script src="scripts/challenges.js"></script>
 <!-- endbuild -->
 </body>
 </html>

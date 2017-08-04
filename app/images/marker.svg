@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="25px" height="30px" viewBox="0 0 25 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.232768,14.728113 C8.69069884,14.728113 6.62526767,12.6626819 6.62526767,10.1206127 C6.62526767,7.57854359 8.69069884,5.51311243 11.232768,5.51311243 C13.7748371,5.51311243 15.8402683,7.57854359 15.8402683,10.1206127 C15.8402683,12.6626819 13.7748371,14.728113 11.232768,14.728113 M19.176734,3.28880194 C19.176734,3.28880194 19.176734,3.25702607 19.176734,3.28880194 C14.7916648,-1.09626731 7.67387119,-1.09626731 3.28880194,3.28880194 C-1.09626731,7.67387119 -1.09626731,14.8234406 3.28880194,19.2085099 L10.3430438,26.2627517 C10.5972507,26.5169586 10.9150093,26.6440621 11.232768,26.6440621 C11.5505266,26.6440621 11.8682853,26.5169586 12.1224922,26.2627517 L19.176734,19.176734 C23.5618033,14.7916648 23.5618033,7.67387119 19.176734,3.28880194" id="path-1"></path>
+        <filter x="-5.6%" y="-4.7%" width="115.6%" height="116.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="1" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="SourceAlpha" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-/-pin" transform="translate(1.000000, 1.000000)">
+            <g id="pin">
+                <g id="Page-1">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use stroke="#FFFFFF" stroke-width="0.5" fill="#050708" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

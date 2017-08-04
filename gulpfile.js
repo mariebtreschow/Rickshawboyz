@@ -145,7 +145,7 @@ gulp.task('serve:test', ['scripts'], () => {
   });
 
   gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
+  gulp.watch(['test/spec/**/*.js', 'test/map.html']).on('change', reload);
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
