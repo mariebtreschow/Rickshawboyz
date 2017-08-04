@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RickShaw Boyz</title>
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+</head>
+<body id="about">
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div id="challenger" style="z-index: 0; height: 100%; margin-left: 10%">
+    <div id="tweetContainer">
+        <button id="tweetChallenge" onclick="twitterButton()">Tweet a Challenge</button>
+        <div id="peopleAbout">
+            <div id="yourNYU">
+                <div id="yourName">
+                    YourName
+                </div>
+                <div id="yourUser">
+                    @yourhandle:
+                </div>
+            </div>
+            <div id="yourChallenge">
+                @rickshawboyz <span id="colorfull">your pledge €</span> #savetherainforest #rickshawboyz
+            </div>
+        </div>
+    </div>
+</div>
+
+<img id="logoRickFade" src="./images/rickshaw-boyz-sm.svg" alt="Rickshaw Boyz Logo">
+<div id="buttonContainer">
+    <a href="map.html" id="iconLink">
+        <svg width="25px" height="25px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Icon-/-desktop-map-inactive" transform="translate(-13.000000, -11.000000)" stroke="#FFFFFF" stroke-width="1.5">
+                    <path d="M23.0086738,23.8006617 C20.9718283,23.8072418 19.311844,22.1574268 19.3052639,20.1205813 C19.299282,18.0837358 20.9490969,16.4237515 22.9859425,16.4171714 C25.022788,16.4111895 26.6827722,18.0610045 26.6887542,20.0972518 C26.6953343,22.1340973 25.0455193,23.7940816 23.0086738,23.8006617 Z M29.3453271,14.6154156 C29.3453271,14.6154156 29.344729,14.5896933 29.3453271,14.6154156 C25.8207768,11.1129984 20.1176093,11.1303459 16.6151921,14.6548963 C13.1127749,18.1794466 13.1307207,23.9077381 16.6546729,27.4101553 L22.3243415,33.0445307 C22.5289234,33.2479161 22.7837534,33.3490107 23.0385834,33.3478143 C23.2928152,33.3472161 23.5470471,33.2449252 23.7504325,33.0403433 L29.3848079,27.3449524 C32.8872251,23.8210002 32.8692793,18.1178328 29.3453271,14.6154156 Z" id="Page-1-Copy-4"></path>
+                </g>
+            </g>
+        </svg>
+    </a>
+    <a href="challenges.html" id="iconLink">
+        <svg width="25px" height="25px" viewBox="0 0 22 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            &lt;!&ndash; Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch &ndash;&gt;
+            <desc>Created with Sketch.</desc>
+            <defs>
+                <path d="M5.79692308,2.95307692 C5.80384615,2.92846154 6.76538462,0.433076923 7.79769231,0.433076923 C7.82538462,0.433076923 7.85384615,0.434615385 7.88153846,0.438461538 C8.36230769,0.505384615 8.90076923,0.686153846 9.97692308,1.05846154 C12.2530769,1.84692308 12.4838462,2.08230769 13.9915385,3.61923077 C14.1853846,3.81615385 14.4015385,4.03615385 14.6469231,4.28384615 C16.5353846,6.18 18.6453846,11.1592308 19.4653846,13.2115385 L19.5,13.2984615 C19.63,13.6053846 19.8546154,14.5561538 19.3230769,15.2176923 C16.6823077,18.5338462 12.5853846,20.1361538 11.3584615,20.4361538 C10.8276923,20.5692308 9.67923077,20.6015385 8.56923077,20.6330769 C7.90153846,20.6523077 7.27153846,20.67 6.95230769,20.7076923 L6.89769231,20.7138462 C6.74692308,20.7338462 6.46615385,20.7692308 5.66,20.7692308 C5.21538462,20.7692308 4.61076923,20.7584615 3.78,20.7284615 C2.44384615,20.6792308 1.38384615,19.9923077 0.714615385,18.7407692 C0.254615385,17.8807692 0.0853846154,16.9523077 0.0261538462,16.4753846 C-0.0876923077,15.5753846 0.16,14.0623077 0.973846154,12.87 C1.54384615,12.0307692 2.32,11.4246154 3.27923077,11.0684615 C5.57923077,10.2207692 7.33846154,11.4438462 8.02307692,12.0461538 C8.14230769,11.9323077 8.24307692,11.8453846 8.31153846,11.8015385 C9.42615385,11.0738462 10.2861538,11.0876923 11.2130769,11.1753846 C11.4807692,11.2023077 11.7484615,11.2923077 11.9969231,11.4092308 C11.9830769,11.3584615 11.9684615,11.3061538 11.9523077,11.2523077 L11.9330769,11.1823077 L11.9338462,11.1107692 C11.9369231,9.48384615 11.9046154,6.87769231 11.8023077,6.36384615 C11.7138462,5.94 10.8315385,5.31769231 10.5392308,5.24076923 C10.5161538,5.24153846 10.4992308,5.24769231 10.4269231,5.28 C10.3030769,5.33461538 10.1138462,5.42076923 9.83307692,5.41538462 C9.47307692,5.41538462 9.12307692,5.29 8.81384615,5.17846154 C8.77307692,5.16461538 8.73384615,5.15076923 8.69461538,5.13692308 C8.59,5.21307692 8.42615385,5.32461538 8.15538462,5.44153846 C7.62153846,5.67307692 7.21615385,5.67769231 6.88461538,5.45615385 L6.84769231,5.43923077 C6.51307692,5.27769231 6.13307692,5.09538462 5.87384615,4.55 C5.59153846,3.96769231 5.72230769,3.19923077 5.79692308,2.95307692 Z M7.98846154,17.76 C8.46615385,18.0146154 9.00384615,18.1238462 9.55153846,18.1238462 C11.1230769,18.1238462 12.7830769,17.2246154 13.3823077,16.2661538 L7.98846154,17.76 Z" id="path-1"></path>
+            </defs>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Icon-/-Desktop-Challenge-inactive" transform="translate(-12.000000, -11.000000)">
+                    <g id="Page-1" transform="translate(16.000000, 15.000000)">
+                        <g id="Group-3" transform="translate(0.000000, 0.336385)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M-3.84615385,24.6153846 L23.5061538,24.6153846 L23.5061538,-3.41307692 L-3.84615385,-3.41307692 L-3.84615385,24.6153846 Z M-2.30769231,23.0769231 L21.9676923,23.0769231 L21.9676923,-1.87461538 L-2.30769231,-1.87461538 L-2.30769231,23.0769231 Z" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+                        </g>
+                        <path d="M16.4999863,9.86479924 L16.4653709,9.77787616 C15.6453709,7.72556847 13.5353709,2.74710693 11.6469094,0.850183854 C11.4015248,0.603260778 11.1853709,0.383260778 10.992294,0.186337701 C9.48383247,-1.35058538 9.25229401,-1.58673922 6.97690939,-2.37520076 C5.90075554,-2.74673922 5.36229401,-2.92827768 4.88152478,-2.99443153 C3.81767862,-3.13673922 2.80383247,-0.50443153 2.79690939,-0.479816146 C2.72229401,-0.233662299 2.59152478,0.534799239 2.87383247,1.11710693 C3.13306324,1.66326078 3.51306324,1.84479924 3.84767862,2.0063377 L3.8846017,2.02326078 C4.21614016,2.24479924 4.62152478,2.24018385 5.15614016,2.00941462 C5.42614016,1.89249155 5.58998631,1.78095309 5.6946017,1.70326078 C5.73383247,1.71710693 5.77306324,1.73172232 5.81383247,1.7463377 C6.12306324,1.85710693 6.47306324,1.98249155 6.83306324,1.98249155 C7.11383247,1.98787616 7.30306324,1.90095309 7.42690939,1.8463377 C7.49921708,1.81479924 7.51690939,1.80864539 7.53921708,1.80787616 C7.83152478,1.88479924 8.71383247,2.5063377 8.80152478,2.93095309 C8.90383247,3.44479924 8.93690939,6.05095309 8.93306324,7.67787616 L8.93306324,7.74941462 L8.95229401,7.81941462 C8.96767862,7.87326078 8.98229401,7.92556847 8.99690939,7.9763377 C8.74767862,7.85864539 8.48075554,7.76864539 8.21229401,7.74249155 C7.28614016,7.65479924 6.42614016,7.64095309 5.31075554,8.36787616 C5.24306324,8.41249155 5.14229401,8.49941462 5.02229401,8.61249155 C4.33844785,8.01018385 2.57844785,6.78787616 0.279217083,7.63479924 C-0.680013686,7.99172232 -1.45616753,8.59787616 -2.02693676,9.4363377 C-2.84001369,10.6294146 -3.08770599,12.1417223 -2.97385984,13.0424915 C-2.91462907,13.5194146 -2.74616753,14.4478762 -2.2853983,15.3071069 L-2.2853983,15.3078762 C-1.6153983,16.5586454 -0.555398301,17.2463377 0.779986314,17.2947992 C1.61075554,17.3255685 2.21537093,17.3363377 2.65998631,17.3363377 C3.46537093,17.3363377 3.74690939,17.3001839 3.89767862,17.2809531 L3.95229401,17.2747992 C4.27152478,17.2371069 4.90152478,17.2186454 5.56844785,17.2001839 C6.67921708,17.1678762 7.82767862,17.1355685 8.35844785,17.0024915 C9.58537093,16.7032608 13.6815248,15.1009531 16.3230632,11.7847992 C16.8538325,11.1224915 16.6299863,10.1724915 16.4999863,9.86479924 M10.382294,12.8332608 C9.57383247,14.1263377 6.83614016,15.3101839 4.98844785,14.3271069" id="Stroke-4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="bevel"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </a>
+    <a href="about.html" id="iconLink">
+        <svg style="margin-left: 27%; margin-top: 27%;"width="20px" height="20px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Icon-/-Desktop-about-active" transform="translate(-14.000000, -15.000000)" stroke="#F8E71C" stroke-width="1.5">
+                    <path d="M14,28.0606869 L25.7783569,28.0606869 M14,22.3983926 L29.2682404,22.3983926 L14,22.3983926 Z M14,16.7360983 L32,16.7360983 L14,16.7360983 Z" id="Path-3-Copy-2"></path>
+                </g>
+            </g>
+        </svg>
+    </a>
+
+</div>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ7oyccBwagMEjSShM6TQmkuLLcVcjZYo&callback=initMap"-->
+        <!--async defer></script>-->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    function twitterButton(){
+    	window.open("https://twitter.com/");
+    }
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+		e.src='https://www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/bootstrap/js/modal.js"></script>
+
+<!-- build:js scripts/main.js -->
+<!--<script src="scripts/main.js"></script>-->
+<!-- endbuild -->
+</body>
+</html>
