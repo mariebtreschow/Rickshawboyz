@@ -8,6 +8,8 @@ module.exports = function (app) {
 
     app.get('/', TwitterFeed.getRickshawBoyzTweets);
 
+    app.get('/rickshawboyz', TwitterFeed.getRickshawBoyzTweetsFromDatabase);
+
     app.get('/about');
    //not in use right now, need to render from datbase
     app.get('/challenges/test', listChallenges.getTweetsBasedOnHashtag);

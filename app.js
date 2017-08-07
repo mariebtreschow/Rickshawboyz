@@ -1,11 +1,12 @@
-const bodyParser     = require('body-parser'),
-      express        = require('express'),
-      mongoose       = require('mongoose'),
-      http           = require('http'),
-      morgan         = require('morgan'),
-      twitter        = require('twitter'),
-      config         = require('./config'),
-      streamHandler  = require('./utils/streamHandler.js');
+const bodyParser                   = require('body-parser'),
+      express                      = require('express'),
+      mongoose                     = require('mongoose'),
+      http                         = require('http'),
+      morgan                       = require('morgan'),
+      twitter                      = require('twitter'),
+      config                       = require('./config'),
+      streamHandler                = require('./utils/streamHandler.js'),
+      streamHandlerRickshawProfile = require('./utils/streamHandlerRickshawProfile.js');
 
 
 let app              = express();
@@ -42,9 +43,14 @@ const io = require('socket.io').listen(server);
 
 const twit = new twitter(config.twitter);
 
-twit.stream('statuses/filter',{ track: '#rickshawboyz, #savetherainforest'}, function(stream){
-   console.log('Starting to streaming twitter !!');
+twit.stream('statuses/filter',{ track: '#rickshawboyz'}, function(stream){
+   console.log('Starting to stream twitter !!');
    streamHandler(stream, io);
+});
+
+twit.stream('statuses/filter',{ track: 'rickshawboyz'}, function(stream){
+   console.log('Starting to stream profile of rickshawboyz');
+   streamHandlerRickshawProfile(stream, io);
 });
 
 app.use(function (req, res, next) {

@@ -1,10 +1,10 @@
-const Tweet = require('../models/tweets');
+const ProfileTweets = require('../models/profile');
 
 module.exports = function(stream, io){
 
    stream.on('data', function(data) {
 
-      let tweet = {
+      let tweetFromProfile = {
          twid: data['id'],
          active: false,
          author: data['user']['name'],
@@ -14,11 +14,12 @@ module.exports = function(stream, io){
          screenname: data['user']['screen_name']
       };
 
-    let tweetEntry = new Tweet(tweet);
+    let tweetEntryForProfile = new ProfileTweets(tweetFromProfile);
+    console.log(tweetEntryForProfile)
 
-    tweetEntry.save(function(err) {
+    tweetEntryForProfile.save(function(err) {
        if (!err) {
-        io.emit('tweet', tweet);
+        io.emit('tweetFromProfile', tweetFromProfile);
        }
     });
   });
