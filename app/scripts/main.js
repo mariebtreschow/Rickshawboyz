@@ -53,9 +53,10 @@ function ajaxCall(map) {
 	var routes=[];
 	$.ajax(
 		{
-			url:'http://192.168.6.55:8050/',
+			url:'http://192.168.5.177:8050/',
 			success: function (result) {
 				let tweetDict = pairsTweets(result.twitterArray);
+				console.log(result.twitterArray.length)
 				getLocation(map, tweetDict, routes);
 			},
 			error:
@@ -68,7 +69,12 @@ function ajaxCall(map) {
 }
 function pairsTweets(array){
 	let dict = [];
+	let picTweet = [];
 		for (let rt=0; rt<array.length; rt++){
+			if(array[rt].entities.hashtags[0] &&
+				array[rt].entities.hashtags[0].text==='itshappening'){
+				picTweet.push(array[rt]);
+			}
 			if(array[rt].retweeted_status){
 				for(let rp=0; rp<array.length; rp++){
 					if(array[rt].retweeted_status.id === array[rp].in_reply_to_status_id){
@@ -77,23 +83,88 @@ function pairsTweets(array){
 				}
 			}
 		}
-	return dict
+		console.log(dict, picTweet)
+	return [dict, picTweet];
 }
 
 function getLocation(map, array, routes) {
-	console.log(array);
-	array.forEach(function (tweet, index) {
-
+	let finalRoutes=[];
+	array[0].forEach(function (tweet, index) {
 		if (tweet[1].geo){
 			routes.push(paintLocation(map, tweet,index));
 		}
 	});
-	paintPolyline(map, routes);
+	array[1].forEach(function (tweet, index) {
+		if (tweet.geo){
+			routes.push(pictureTweet(map, tweet,index));
+		}
+	});
+	routes.sort(function(a,b){
+		return a[0]-b[0]
+	});
+	routes.forEach(function(x){
+		finalRoutes.push(x.pop())
+	});
+	paintPolyline(map, finalRoutes);
+}
+
+function pictureTweet(map, tweet, index){
+	var myLatLng = {lat: tweet.geo.coordinates[0], lng: tweet.geo.coordinates[1]};
+	index===0 ? map.setCenter(myLatLng) : '';
+	map.setZoom(6);
+
+	var iconBase = './images/';
+
+
+	var contentString=`
+	<div class="modal fade"  id="myModalPic${index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content" style="background-color: black">
+
+              <div class="modal-body">
+                  <a id="container" target="_blank" href='https://twitter.com/rickshawboyz/status/${tweet.id_str}'>
+                      <div id="tweetInfo">
+                          <img id="profileImgTweet" class="rounded-circle" src=${tweet.user.profile_image_url_https}>
+                          <div id="infoContainer">
+                              <div id="tweetData">
+                                  <div id="tweetName">${tweet.user.name}</div>
+                                  <div id="tweetUsername">@${tweet.user.screen_name}</div>
+                              </div>
+                              <div id="tweetContent">${tweet.text}</div>
+                          </div>
+                      </div>
+                      <div id="reply">
+                          <div id="contentReply">`+ (tweet.extended_entities ?
+			`<img id="imgContent" style="background-image: url(${tweet.extended_entities.media[0].media_url})">` :
+			`<div id="filler"></div>`)+
+															`<div id="infoReplyContainer" style="height: 10%">
+                                  
+                              </div>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>`;
+	$('#map').append(contentString);
+
+	var marker = new google.maps.Marker({
+		position: myLatLng,
+		map: map,
+		icon: iconBase + 'marker.svg'
+	});
+	marker.addListener('click', function() {
+		$('#logoRick').css({'display':'none'});
+		$(`#myModalPic${index}`).modal('show');
+		map.setCenter(myLatLng)
+	});
+
+	return [tweet.id, myLatLng]
 }
 
 function paintLocation(map, tweet, index) {
 	var myLatLng = {lat: tweet[1].geo.coordinates[0], lng: tweet[1].geo.coordinates[1]};
-	console.log(tweet[1].text);
 	index===0 ? map.setCenter(myLatLng) : '';
 	map.setZoom(6);
 
@@ -153,11 +224,12 @@ function paintLocation(map, tweet, index) {
 		map.setCenter(myLatLng)
 	});
 
-	return myLatLng
+	return [tweet[1].id, myLatLng]
 }
 
 function paintPolyline(map, routes) {
-
+	map.setZoom(6);
+	map.setCenter(routes[routes.length-1]);
 	var polyline = new google.maps.Polyline({
 		path: routes
 		, map: map

@@ -2,7 +2,7 @@
 function ajaxCall() {
 	$.ajax(
 		{
-			url:'http://192.168.6.55:8050/challenges',
+			url:'http://192.168.5.177:8050/challenges',
 			success: function (result) {
 				console.log(result);
 				paintChallenges(result.tweets);
