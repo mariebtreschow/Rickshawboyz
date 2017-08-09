@@ -1,8 +1,8 @@
 
-function ajaxCall() {
+function ajaxCallChallenges() {
 	$.ajax(
 		{
-			url:'http://192.168.6.55:8050/challenges',
+			url:'http://www.rickshawboyz.nl/api/challenges',
 			success: function (result) {
 				console.log(result);
 				paintChallenges(result.tweets);
@@ -36,7 +36,7 @@ function paintChallenges(tweets) {
 
 
 window.onload = function() {
-ajaxCall();
+ajaxCallChallenges();
 	$('#challenger').scroll(function () {
 		var x = $(this).scrollTop();
 		if (x > 99) {
