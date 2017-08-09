@@ -53,7 +53,7 @@ function ajaxCall(map) {
 	var routes=[];
 	$.ajax(
 		{
-			url:'http://192.168.5.177:8050/',
+			url:'http://www.rickshawboyz.nl/api/',
 			success: function (result) {
 				let tweetDict = pairsTweets(result.twitterArray);
 				console.log(result.twitterArray.length)

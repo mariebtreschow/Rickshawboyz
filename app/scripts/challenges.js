@@ -2,7 +2,7 @@
 function ajaxCall() {
 	$.ajax(
 		{
-			url:'http://192.168.5.177:8050/challenges',
+			url:'http://www.rickshawboyz.nl/api/challenges',
 			success: function (result) {
 				console.log(result);
 				paintChallenges(result.tweets);
