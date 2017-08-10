@@ -56,7 +56,6 @@ function ajaxCall(map) {
 			url:'http://www.rickshawboyz.nl/api/',
 			success: function (result) {
 				let tweetDict = pairsTweets(result.twitterArray);
-				console.log(result.twitterArray.length)
 				getLocation(map, tweetDict, routes);
 			},
 			error:
@@ -83,7 +82,6 @@ function pairsTweets(array){
 			}
 		}
 	}
-	console.log(dict, picTweet)
 	return [dict, picTweet];
 }
 
@@ -136,7 +134,7 @@ function pictureTweet(map, tweet, index){
                       <div id="reply">
                           <div id="contentReply">`+ (tweet.extended_entities ?
 			`<img id="imgContent" style="background-image: url(${tweet.extended_entities.media[0].media_url})">` :
-			`<div id="filler"></div>`)+
+			'<div id="filler"></div>')+
 		`<div id="infoReplyContainer" style="height: 10%">
                                   
                               </div>
@@ -191,7 +189,7 @@ function paintLocation(map, tweet, index) {
                       <div id="reply">
                           <div id="contentReply">`+ (tweet[1].extended_entities ?
 			`<img id="imgContent" style="background-image: url(${tweet[1].extended_entities.media[0].media_url})">` :
-			`<div id="filler"></div>`)+
+			'<div id="filler"></div>')+
 		`
                               <div id="infoReplyContainer">
                                   <img id="profileImgReply" class="rounded-circle" src=${tweet[1].user.profile_image_url_https}>
