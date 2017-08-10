@@ -6,6 +6,7 @@ module.exports = function (app) {
 
     app.get('/health', Health.check);
 
+    //for the map
     app.get('/', TwitterFeed.getRickshawBoyzTweets);
 
     app.get('/rickshawboyz', TwitterFeed.getRickshawBoyzTweetsFromDatabase);

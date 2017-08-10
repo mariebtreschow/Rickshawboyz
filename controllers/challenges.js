@@ -19,7 +19,7 @@ let self = module.exports = {
 
       Tweet.find().exec(function(error, tweetsFromDatabase){
 
-            if(!error && tweetsFromDatabase !== undefined){
+            if(!error && tweetsFromDatabase !== undefined && tweetsFromDatabase.screenname !== 'rickshawboyz'){
 
                res.status(200).send({
                   status : 'success',

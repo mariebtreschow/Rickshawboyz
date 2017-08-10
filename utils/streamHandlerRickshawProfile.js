@@ -15,7 +15,6 @@ module.exports = function(stream, io){
       };
 
     let tweetEntryForProfile = new ProfileTweets(tweetFromProfile);
-    console.log(tweetEntryForProfile)
 
     tweetEntryForProfile.save(function(err) {
        if (!err) {

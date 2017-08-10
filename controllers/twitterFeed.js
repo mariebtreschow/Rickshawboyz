@@ -17,6 +17,7 @@ let self = module.exports = {
    params: params,
 
    getRickshawBoyzTweetsFromDatabase: function(req, res){
+      //not used
       ProfileTweets.find().exec(function(error, profileTweetsFromDatabase){
 
             if(!error && tweetsFromDatabase !== undefined){
