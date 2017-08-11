@@ -38,7 +38,7 @@ window.onload = function() {
 ajaxCallChallenges();
 	$('#challenger').scroll(function () {
 		var x = $(this).scrollTop();
-		if (x > 99) {
+		if (x > 50) {
 			$('#logoRickFade').fadeOut(250);
 		}
 		else{

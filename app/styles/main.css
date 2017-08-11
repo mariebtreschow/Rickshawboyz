@@ -277,13 +277,13 @@ a:link {
         height: 60px;
         width: 70%;
         box-shadow: 0px 2px 0px 0px rgba(53, 53, 53, 1);
-        margin-top: 60%;
         margin-left: 10%;
-        /*margin-bottom: 15%;*/
+        margin-bottom: 5%;
+        margin-top: 5%;
     }
 
     #peopleAbout {
-        margin-top: 10%;
+        margin-top: 3%;
     }
 
     #yourNYU {
@@ -298,15 +298,33 @@ a:link {
         font-size: 17px;
         margin-right: 3%;
     }
+    #tableContent{
+        margin-left: 5%;
+        font-size: 13px;
+        padding-bottom: 30%;
+    }
 
+    #boxHappen{
+        margin-top:5%;
+    }
     #yourUser {
         color: rgba(150, 150, 150, 1);
         font-family: Metropolis-Light;
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 100;
+        margin-bottom: 5%;
     }
 
     #yourChallenge {
+        color: rgba(131, 131, 131, 1);
+        font-family: Metropolis-Medium;
+        font-size: 17px;
+    }
+    #tweetContainer {
+        padding-top: 50%;
+    }
+
+    #intro {
         color: rgba(131, 131, 131, 1);
         font-family: Metropolis-Medium;
         font-size: 17px;
@@ -491,7 +509,7 @@ a:link {
     }
 
     #challengesContainer {
-        margin-top: 5%;
+        margin-top: 15%;
     }
 
     /*END CHALLENGER SCREEN*/
@@ -629,7 +647,7 @@ a:link {
         height: 60px;
         width: 70%;
         box-shadow: 0px 2px 0px 0px rgba(53, 53, 53, 1);
-        margin-top: 25%;
+        margin-top: 5%;
         margin-left: 10%;
     }
     /*---------------------------------------------------------------*/
@@ -638,12 +656,29 @@ a:link {
         margin-top: 5%;
         margin-left: 20%;
     }
+    #tweetContainer {
+        padding-top: 5%;
+    }
 
     #yourNYU {
         width: 100%;
         display: inline-flex;
         margin-bottom: 3%;
     }
+    #intro {
+        color: rgba(131, 131, 131, 1);
+        font-family: Metropolis-Medium;
+        font-size: 17px;
+    }
+    #tableContent{
+        margin-left: 5%;
+        font-size: 13px;
+    }
+
+    #boxHappen{
+        margin-top:5%;
+    }
+
 
     #yourName {
         color: rgba(71, 71, 71, 1);
@@ -657,6 +692,7 @@ a:link {
         font-family: Metropolis-Light;
         font-size: 17px;
         font-weight: 100;
+        margin-bottom: 10%;
     }
     /*---------------------------------------------------------------*/
 
@@ -973,11 +1009,26 @@ a:link {
         height: 60px;
         width: 70%;
         box-shadow: 0px 2px 0px 0px rgba(53, 53, 53, 1);
-        margin-top: 25%;
         margin-left: 10%;
+        margin-top: 5%;
     }
     /*---------------------------------------------------------------*/
 
+
+    #intro {
+        color: rgba(131, 131, 131, 1);
+        font-family: Metropolis-Medium;
+        font-size: 17px;
+        margin-top: 10%;
+    }
+    #tableContent{
+        margin-left: 5%;
+        font-size: 13px;
+    }
+
+    #boxHappen{
+        margin-top:5%;
+    }
     #peopleAbout {
         margin-top: 5%;
         margin-left: 20%;
@@ -1001,6 +1052,7 @@ a:link {
         font-family: Metropolis-Light;
         font-size: 17px;
         font-weight: 100;
+        margin-bottom: 5%;
     }
     /*---------------------------------------------------------------*/
 

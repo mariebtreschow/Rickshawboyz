@@ -26,24 +26,43 @@
 <!--[if IE]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div id="challenger" style="z-index: 0; height: 100%; margin-left: 10%">
+<div id="challenger" style="overflow: scroll; z-index: 0; height: 100%; margin-left: 10%">
     <div id="tweetContainer">
+        <div id="intro">
+            To propose a challenge to the Rickshaw Boyz, you need to post a challenge using twitter. Use the button below to go to start tweeting:
+        </div>
         <button id="tweetChallenge" onclick="twitterButton()">Tweet a Challenge</button>
         <div id="peopleAbout">
-            <div id="yourNYU">
-                <div id="yourName">
-                    YourName
-                </div>
-                <div id="yourUser">
-                    @yourhandle:
-                </div>
-            </div>
+            <!--<div id="yourNYU">-->
+                <!--<div id="yourName">-->
+                    <!--YourName-->
+                <!--</div>-->
+                <!--<div id="yourUser">-->
+                    <!--@yourhandle:-->
+                <!--</div>-->
+            <!--</div>-->
             <div id="yourChallenge">
-                @rickshawboyz <span id="colorfull">your pledge €</span> #savetherainforest #rickshawboyz
+                <div>In order for the challenge to be accepted use the following format:</div>
+                <div id="yourUser"><span id="colorfull">@rickshawboyz</span> [challenge] [amount in EUR] <span id="colorfull">#rickshawboyz #savetherainforest</span></div>
+                <div>For example:</div>
+                <div id="yourUser"><span id="colorfull">@rickshawboyz</span> take a selfie with a stray goat EUR 5.00 <span id="colorfull">#rickshawboyz #savetherainforest</span></div>
+                <div id="boxHappen">
+                    <div>What happens from there?</div>
+                    <div id="tableContent">
+                        <div>* We fulfil the challenge (or not)</div>
+                        <div>* We post the picture online. It will appear on the map</div>
+                        <div>* We contact you to cough up the moneys</div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
 
 <img id="logoRickFade" src="./images/rickshaw-boyz-sm.svg" alt="Rickshaw Boyz Logo">
 <div id="buttonContainer">
@@ -83,7 +102,7 @@
         </svg>
     </a>
     <a href="about.html" id="iconLink">
-        <svg style="margin-left: 27%; margin-top: 27%;"width="20px" height="20px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg style="margin-left: 27%; margin-top: 27%;" width="20px" height="20px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 45 (43475) - http://www.bohemiancoding.com/sketch -->
             <desc>Created with Sketch.</desc>
             <defs></defs>
@@ -96,27 +115,28 @@
     </a>
 
 </div>
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ7oyccBwagMEjSShM6TQmkuLLcVcjZYo&callback=initMap"-->
-        <!--async defer></script>-->
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
-    function twitterButton(){
-    	window.open("https://twitter.com/");
-    }
-	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='https://www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-	ga('create','UA-XXXXX-X');ga('send','pageview');
-</script>
+
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/modernizr/modernizr.js"></script>
 <script src="/bower_components/bootstrap/js/modal.js"></script>
+<script>
+	function twitterButton(){
+		window.open("https://twitter.com/");
+	}
+	$('#challenger').scroll(function () {
+		var x = $(this).scrollTop();
+		if (x > 49) {
+			$('#logoRickFade').fadeOut(250);
+		}
+		else{
+			$('#logoRickFade').fadeIn(250);
+		}
+	});
+</script>
 
 <!-- build:js scripts/main.js -->
 <!--<script src="scripts/main.js"></script>-->
