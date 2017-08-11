@@ -70,10 +70,7 @@ function pairsTweets(array){
 	let dict = [];
 	let picTweet = [];
 	for (let rt=0; rt<array.length; rt++){
-		if(array[rt].entities.hashtags[0] &&
-			array[rt].entities.hashtags[0].text==='itshappening'){
-			picTweet.push(array[rt]);
-		}
+		picTweet.push(array[rt]);
 		if(array[rt].retweeted_status){
 			for(let rp=0; rp<array.length; rp++){
 				if(array[rt].retweeted_status.id === array[rp].in_reply_to_status_id){
