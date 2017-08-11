@@ -1,7 +1,6 @@
 "use strict";
 
 const Twitter        = require('twitter');
-const ProfileTweets  = require('../models/tweets.js');
 const config         = require('../config');
 
 const client = new Twitter(config.twitter);

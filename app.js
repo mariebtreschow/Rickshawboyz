@@ -6,7 +6,6 @@ const bodyParser                   = require('body-parser'),
       twitter                      = require('twitter'),
       config                       = require('./config'),
       streamHandler                = require('./utils/streamHandler.js'),
-      streamHandlerRickshawProfile = require('./utils/streamHandlerRickshawProfile.js');
 
 
 let app              = express();
