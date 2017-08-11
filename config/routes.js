@@ -11,11 +11,6 @@ module.exports = function (app) {
 
     app.get('/rickshawboyz', TwitterFeed.getRickshawBoyzTweetsFromDatabase);
 
-    app.get('/about');
-   //not in use right now, need to render from datbase
-    app.get('/challenges/test', listChallenges.getTweetsBasedOnHashtag);
+    app.get('/challenges', listChallenges.getTweetsSavedInDB);
 
-     app.get('/challenges', listChallenges.getTweetsSavedInDB);
-
-    app.post('/challenges');
 };

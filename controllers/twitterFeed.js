@@ -8,32 +8,13 @@ const client = new Twitter(config.twitter);
 
 const params = {
    screen_name : 'rickshawboyz',
-   count : 100
+   count : 200
 };
 
 let self = module.exports = {
 
    client : client,
    params: params,
-
-   getRickshawBoyzTweetsFromDatabase: function(req, res){
-      //not used
-      ProfileTweets.find().exec(function(error, profileTweetsFromDatabase){
-
-            if(!error && tweetsFromDatabase !== undefined){
-
-               res.status(200).send({
-                  status : 'success',
-                  tweets : profileTweetsFromDatabase
-               });
-            } else {
-               res.status(404).send({
-                  status : 'No Tweets found in database',
-                  tweets : null
-               });
-            }
-      });
-   },
 
    getRickshawBoyzTweets : function(req, res){
 

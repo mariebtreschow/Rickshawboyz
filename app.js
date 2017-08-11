@@ -48,11 +48,6 @@ twit.stream('statuses/filter',{ track: '#rickshawboyz'}, function(stream){
    streamHandler(stream, io);
 });
 
-twit.stream('statuses/filter',{ track: 'rickshawboyz'}, function(stream){
-   console.log('Starting to stream profile of rickshawboyz');
-   streamHandlerRickshawProfile(stream, io);
-});
-
 app.use(function (req, res, next) {
    res.status(404).send('Tweet not found');
 });
