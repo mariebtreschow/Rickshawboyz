@@ -71,7 +71,6 @@ function pairsTweets(array){
 	let dict = [];
 	let picTweet = [];
 	for (let rt=0; rt<array.length; rt++){
-		picTweet.push(array[rt]);
 		if(array[rt].retweeted_status){
 			for(let rp=0; rp<array.length; rp++){
 				if(array[rt].retweeted_status.id === array[rp].in_reply_to_status_id){
@@ -79,11 +78,15 @@ function pairsTweets(array){
 				}
 			}
 		}
+		else{
+			picTweet.push(array[rt]);
+		}
 	}
 	return [dict, picTweet];
 }
 
 function getLocation(map, array, routes) {
+	console.log(array)
 	let finalRoutes=[];
 	array[0].forEach(function (tweet, index) {
 		if (tweet[1].geo){
