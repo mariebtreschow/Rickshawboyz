@@ -4,6 +4,7 @@ function ajaxCallChallenges() {
 		{
 			url:'http://www.rickshawboyz.nl/api/challenges',
 			success: function (result) {
+				console.log(result.tweets)
 				paintChallenges(result.tweets);
 			},
 			error:
@@ -17,7 +18,8 @@ function ajaxCallChallenges() {
 function paintChallenges(tweets) {
 
 	for (let index=0; index<tweets.length; index++) {
-		if(tweets[index].body.indexOf('RT ') !== 0) {
+		if(tweets[index].body.indexOf('RT ') !== 0 &&
+		tweets[index].author !== 'Rickshaw boyz') {
 			$('#challengesContainer').after(`
 				<div id="people">
 	        <div id="namesUser">
