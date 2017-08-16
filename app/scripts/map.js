@@ -3,7 +3,7 @@ function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 
 		center: {lat: 14.2966703, lng: 78.09498},
-		zoom: 6,
+		zoom: 5,
 
 		styles: [
 			{elementType: 'geometry', stylers: [{color: '#FDDE30'}]},
@@ -45,6 +45,7 @@ function initMap() {
 		]
 	});
 	map.setOptions({draggable: true});
+	arrivalDestination(map);
 	return map
 }
 
@@ -101,12 +102,13 @@ function getLocation(map, array, routes) {
 		finalRoutes.push(x.pop())
 	});
 	paintPolyline(map, finalRoutes);
+
 }
 
 function pictureTweet(map, tweet, index){
 	var myLatLng = {lat: tweet.geo.coordinates[0], lng: tweet.geo.coordinates[1]};
 	index===0 ? map.setCenter(myLatLng) : '';
-	map.setZoom(6);
+	map.setZoom(5);
 
 	var iconBase = './images/';
 
@@ -161,9 +163,9 @@ function pictureTweet(map, tweet, index){
 function paintLocation(map, tweet, index) {
 	var myLatLng = {lat: tweet[1].geo.coordinates[0], lng: tweet[1].geo.coordinates[1]};
 	index===0 ? map.setCenter(myLatLng) : '';
-	map.setZoom(6);
+	map.setZoom(5);
 
-	var iconBase = './images/';
+	var iconBase = '../images/';
 
 
 	var contentString=`
@@ -223,7 +225,7 @@ function paintLocation(map, tweet, index) {
 }
 
 function paintPolyline(map, routes) {
-	map.setZoom(6);
+	map.setZoom(5);
 	map.setCenter(routes[routes.length-1]);
 	var polyline = new google.maps.Polyline({
 		path: routes
@@ -232,6 +234,19 @@ function paintPolyline(map, routes) {
 		, strokeWeight: 4
 		, strokeOpacity: 1
 		, clickable: false
+	});
+}
+
+function arrivalDestination(map){
+	var position = {lat:26.9035745, lng:70.870146};
+
+	var flag = new google.maps.Marker({
+		position: position,
+		map: map,
+		icon: './images/flag.svg'
+	});
+	flag.addListener('click', function() {
+		map.setCenter(position)
 	});
 }
 
